@@ -1,1 +1,1 @@
-# covid19_tweet_sentiment_analysis
+# A collection of sentiment analyses
