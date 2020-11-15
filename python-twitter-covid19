@@ -43,10 +43,10 @@ df = df[needed_columns]
 
 #change type - assign number to name
 df.user_name = df.user_name.astype('category')
-df.user_name = df.user_type.cat.codes
+df.user_name = df.user_name.cat.codes
 
 #convert data to datetime
-df.date = pd.to_datatime(df.date).dt.date
+df.date = pd.to_datetime(df.date).dt.date
 
 #take out tweet texts
 texts = df['text']
@@ -110,7 +110,7 @@ data_agg = data[['user_name','date','label']].groupby(['date','label']).count().
 
 data_agg.columns = ['data','label','counts']
 
-px.line(data_agg,x='date',y='counts',color='label',title='daily tweets sentiment analysis')
+px.line(data_agg,x='data',y='counts',color='label',title='daily tweets sentiment analysis')
 
 
 
